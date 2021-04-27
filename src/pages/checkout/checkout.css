@@ -1,0 +1,294 @@
+.checkout-wrapper
+{
+    height: 100vh;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.checkout-wrapper h2{
+
+    font-weight: 500;
+    color:grey;
+    text-align: center;
+    width:100%;
+}
+.checkout-wrapper h2::after
+{
+    content: "";
+    display: block;
+    height:1px;
+    width:100%;
+    background-color: #555;
+    margin-bottom: 5rem;
+}
+.checkout-form
+{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    width:90%;
+    margin:0 auto;
+}
+.payment-info
+{
+    position: relative;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.payment-type-icon
+{
+    position: absolute;
+    top:11px ;
+    left:15px;
+}
+input[type="text"],input[type="tel"],input[type="email"]
+{
+
+    border:none;
+    outline:none;
+    padding:1rem 2.5rem;
+    border:1px solid grey;
+    border-radius: 7px;
+    text-align: center;
+    font-size:1.2rem
+}   
+.success
+{
+  background-color: green;
+  width:100%;
+  height:100%;
+}
+/* #card-number{
+    text-align: start;
+} */
+.payment-btn
+{
+    text-align: center;
+}
+
+.payment-btn button {
+    background: #0c32f0e7;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    border-radius:4px;
+    border: 0;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    transition: all 0.2s ease;
+    box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+    width: 100%;
+  }
+  .payment-btn button:hover {
+    filter: contrast(115%);
+  }
+  .payment-btn button:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+  /* spinner/processing state, errors */
+  .spinner,
+  .spinner:before,
+  .spinner:after {
+    border-radius: 50%;
+  }
+  .spinner {
+    color: #ffffff;
+    font-size: 22px;
+    text-indent: -99999px;
+    margin: 0px auto;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    box-shadow: inset 0 0 0 2px;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  .spinner::before,
+  .spinner::after {
+    position: absolute;
+    content: "";
+  }
+  .spinner::before {
+    width: 10.4px;
+    height: 20.4px;
+    background: #5469d4;
+    border-radius: 20.4px 0 0 20.4px;
+    top: -0.2px;
+    left: -0.2px;
+    -webkit-transform-origin: 10.4px 10.2px;
+    transform-origin: 10.4px 10.2px;
+    -webkit-animation: loading 2s infinite ease 1.5s;
+    animation: loading 2s infinite ease 1.5s;
+  }
+  .spinner::after {
+    width: 10.4px;
+    height: 10.2px;
+    background: #5469d4;
+    border-radius: 0 10.2px 10.2px 0;
+    top: -0.1px;
+    left: 10.2px;
+    -webkit-transform-origin: 0px 10.2px;
+    transform-origin: 0px 10.2px;
+    -webkit-animation: loading 2s infinite ease;
+    animation: loading 2s infinite ease;
+  }
+  @keyframes loading {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+.payment-validation-message
+{
+    color:rgb(255, 0, 0);
+    font-size:1rem;
+    font-weight: 500;
+    display: none;
+}
+.StripeElement
+{
+    width: 20rem;
+    padding:1.0rem;
+    border-radius: 5px;
+    margin-bottom:2rem;
+    border: 1px solid grey;
+}
+.purchase-card-overlay-on
+{
+   visibility: visible;
+}
+.purchase-card-overlay-off
+{
+   visibility: hidden;
+}
+
+.purchase-card-overlay
+{
+  --purchase-card-anim-dur:0.5s;
+  --purchase-check-icon-dur:0.5s;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+  transition:1s ease;
+  }
+.purchase-success-card
+{
+  animation:purchase-success-card-anim var(--purchase-card-anim-dur) forwards ease-in;
+   width: 15rem;
+   height:9.5rem;
+   background-color: rgb(255, 255, 255);
+   box-shadow: 2px 2px 10px rgba(70,70,70,0.5);
+   font-size:1.1rem;
+   font-weight:500;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+    padding:1rem 0; 
+    border-radius: 7px;
+}
+.purchase-success-card-content
+{
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.purchase-success-check-icon-ctn
+{
+  border-radius:50%;
+  border:3px white solid;
+  height: 2.5rem;
+  width:2.5rem;
+  text-align: center;
+  line-height: 2.5rem;
+  animation: purchase-success-card-content-anim 0.5s ease-in var(--purchase-card-anim-dur) forwards;
+
+  position: relative;
+  }
+  .purchase-success-check-icon-ctn::after
+  {
+    content: "";
+    display:block;
+    position:absolute;
+    top:50%;
+    left:50%;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    transform:translate(-50%,-50%);
+    border-radius: 50%;
+    border:3px solid rgb(109, 38, 240);
+    border-bottom-color:rgb(207, 207, 207);
+    transform-origin:top left;
+    animation:loading 2.5s cubic-bezier(0,.99,.9,.47) infinite;
+  }
+  
+.purchase-success-txt
+{
+  color:grey;
+  animation: purchase-success-card-content-anim 0.5s ease-in calc(var(--purchase-card-anim-dur)*2) forwards;
+}
+.purchase-success-ok-btn-ctn
+{
+  width:75%;
+ }
+.purchase-success-ok-btn
+{
+   cursor:pointer;
+   background-color: rgb(109, 38, 240);;
+   outline:none;
+   border:none;
+   display:block;
+   width:100%;
+   height:100%;
+   padding:0.5rem 0;
+   color:white;
+   animation: purchase-success-card-content-anim 0.5s ease-in calc(var(--purchase-card-anim-dur) * 3  ) forwards;
+}
+
+@keyframes purchase-success-card-anim {
+  0%{
+    transform: translateY(100%) ;
+    opacity:0.3;
+  }
+  100%{
+    transform: translateY(0) ;
+
+    opacity:1
+  }
+}
+@keyframes purchase-success-card-content-anim {
+  0%{
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes loading{
+  0%{
+    transform:rotate(0) translate(-50%,-50%);;
+  }
+  100%{
+    transform: rotate(360deg) translate(-50%,-50%);; 
+  }
+}

@@ -1,0 +1,134 @@
+.cartinfo{
+    height:100%;
+    width:100%;
+    overflow: hidden;
+}
+.cartinfo-wrapper h1
+{
+    font-size: 1.5rem;
+    margin-bottom:2.5rem;
+    color: rgb(119, 118, 118);
+    padding: 1rem 0;
+}
+.cartinfo-wrapper
+{
+    width:80%;
+    margin:0 auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartinfo-box
+{
+    width:100%;
+    display:flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+
+}
+.cartinfo-box > *
+{
+    flex-basis: 30%;
+}
+.cartinfo-image-container
+{
+    background-color:aliceblue;
+    border-radius: 10px;
+    text-align: center;
+}
+.cartinfo-image-container img
+{
+
+    border-radius: 6px;
+    width:6.0rem;
+    height: 6.0rem;
+}
+.cartinfo-title-container
+{
+    text-align: center;
+    font-size: 1rem;
+}
+.cartinfo-price-quantity-wrapper
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.5rem;
+    height:100%;
+}
+.cartinfo-quantity-wrapper
+{
+    display:flex;
+    justify-content: center;
+}
+.cartinfo-price-wrapper
+{
+    margin-bottom:0.5rem;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+.cartinfo-quantity-wrapper input[type="number"]
+{
+    background-color: rgb(250, 250, 250);
+    border:0.3px solid #333;
+     outline: none;
+    width:3rem;
+    padding:0.4rem 0.2rem;
+}
+.delete-fav-icon-container
+{
+    text-align: end;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.totalamount-wrapper
+{
+    position: fixed;
+    z-index: 1000;
+    bottom:0;
+    left:0;
+    width:100%;
+    margin:auto;
+    padding:1.2rem 0;
+    background-color: rgb(38, 39, 44);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.totalamount-wrapper span
+{
+    color:white;
+    font-weight: bold;
+    margin-right:4.5rem;
+}
+.checkout-btn
+{
+    background-color:rgb(29, 165, 228) ;
+    border:none;
+    outline:none;
+    color: white;
+    padding:0.70rem 2rem;
+    margin-left:1.2rem;
+    font-size: 1.2rem;
+}
+.checkout-btn:disabled{
+    opacity: 0.5;
+}
+.delete-icon-container
+{
+    margin-bottom:1.5rem;
+}
+.cart-isempty-text
+{
+    font-size: 2rem;
+    padding:7rem 0;
+}

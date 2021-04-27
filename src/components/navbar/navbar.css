@@ -1,0 +1,35 @@
+
+.nav-bar-wrapper
+{
+    margin:0 auto;
+    height:4.5rem;
+    max-width:93%;
+    width:93%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-header h1{
+    font-size:1.4rem;
+    font-weight: 500;
+    color:rgb(85, 84, 84);
+}
+.nav-menu-icon-wrapper
+{
+    height:100%;
+    width:2.0rem;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.nav-menu-icon-wrapper > div:first-child
+{
+    margin-bottom: 0.33rem;
+}
+.nav-menu-icon
+{
+    width:100%;
+    height:0.15rem;
+    background-color: #333;    
+}

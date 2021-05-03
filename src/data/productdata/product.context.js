@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import useLocalstorage from '../../hooks/uselocalstorage';
 import {featuredproducts} from './productjson'
 
@@ -20,6 +20,7 @@ const Productdata = (props)=>{
     }
     const addtowishlist = productID=>
     {
+        console.log(productID)
         const filteredwishlistitems = filteritems(productID,wishlist_ls_items);
         if(filteredwishlistitems.duplicateexists)
             setwishlist_ls_items([...wishlist_ls_items,...filteredwishlistitems.item]);

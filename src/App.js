@@ -8,6 +8,7 @@ import Cartinfo from './pages/cartinfo/cartinfo';
 import Productdata from './data/productdata/product.context';
 import Checkout from './pages/checkout/checkout';
 import Navbar from './components/navbar/navigation';
+import Wishlist from './pages/wishlist/wishlist';
 
 
 const stripepromise = loadStripe('pk_test_51IhaEkGU0fWKdb0TbJu3ifa4jT7etoF3KLu8Esx4JUGHVkfAf7SoDNfsfYCkj1VpEURvt619uvdaEpoxBaVPPZtq00ujgYFZcy')
@@ -22,6 +23,7 @@ function App() {
         </Elements>
         <Productdata>
           <Route component={Cartinfo} path = "/cart" />
+          <Route component={Wishlist} path="/wishlist" />
         </Productdata>
       </div>
     </BrowserRouter>

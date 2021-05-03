@@ -86,11 +86,12 @@
 }
 
 .product-box-info h2{
-    color:rgb(36, 36, 36);
+    color:rgb(109, 109, 109);
     font-weight: 500;
-    font-size: 0.75rem;
+    font-size: 1.2rem;
 }
 .product-box-info span
 {
-    font-size:0.7rem;
+    font-size:1rem;
+    color:rgb(109, 109, 109);
  }

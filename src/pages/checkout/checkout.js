@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {HiCheck, HiOutlineMail} from 'react-icons/hi';
+import {FiPhoneCall,FiUserPlus} from 'react-icons/fi';
 import {useStripe,useElements, CardElement} from '@stripe/react-stripe-js';
 import './checkout.css';
 
@@ -12,6 +13,8 @@ const Checkout = (props)=>
     const elements = useElements();
 
     const[email,setemail] = useState('');
+    const[name,setname] = useState('');
+    const[phone,setphone] = useState(null)
 
     //stripe states
     const [succeeded, setsucceeded] = useState(false);
@@ -56,7 +59,12 @@ const Checkout = (props)=>
         
         const payload = await stripe.confirmCardPayment(clientsecret,{
           payment_method:{
-            card:elements.getElement(CardElement)
+            card:elements.getElement(CardElement),
+            billing_details:{
+              email:email,
+              name:name,
+              phone:phone,
+            }
           }
         })
         if(payload.error)
@@ -83,7 +91,11 @@ const Checkout = (props)=>
     }
     const handlename = e =>
     {
-
+      setname(e.target.value);
+    }
+    const handlephone = e =>
+    {
+      setphone(e.target.value);
     }
     const handleChange = async (event) => {
         setdisabled(event.empty);
@@ -108,9 +120,15 @@ const Checkout = (props)=>
                 </div>
                 <div className="payment-info">
                     <div className="payment-type-icon">
-                        <HiOutlineMail size={28} color="grey" />
+                        <FiUserPlus size={28} color="grey" />
                     </div>
                     <input onChange={handlename} name="name" type="text" placeholder="name" />
+                </div>
+                <div className="payment-info">
+                    <div className="payment-type-icon">
+                        <FiPhoneCall size={28} color="grey" />
+                    </div>
+                    <input onChange={handlephone} name="telephone" type="tel" placeholder="telephone" />
                 </div>
                 <CardElement id="card-element" options={cardStyle} onChange={handleChange} />
                 <div className="payment-btn">

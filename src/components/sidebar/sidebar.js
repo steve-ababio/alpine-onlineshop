@@ -4,6 +4,7 @@ import { BiHome } from "react-icons/bi";
 import { FiShoppingBag } from "react-icons/fi";
 import {FiShoppingCart} from 'react-icons/fi';
 import {MdFavoriteBorder} from "react-icons/md";
+import {Link} from 'react-router-dom'
 import { AiOutlineUser,AiOutlineUserAdd } from "react-icons/ai";
 
 const Sidebar = ({sidebaropened,closesidebar})=>
@@ -18,20 +19,24 @@ const Sidebar = ({sidebaropened,closesidebar})=>
                 </div>
                 <div className="sidebar-list-wrapper">
                     <div className="sidebar-item-wrapper">
-                        <div className="sidebar-item">
-                            <div className="sidebar-icon">
-                                <BiHome size={25} color="rgb(187, 187, 187)" />
+                        <Link to="/" style={{textDecoration:'none'}}>
+                            <div className="sidebar-item">
+                                <div className="sidebar-icon">
+                                    <BiHome size={25} color="rgb(187, 187, 187)" />
+                                </div>
+                                <div className="sidebar-text"><span>HOME</span></div>
                             </div>
-                            <div className="sidebar-text"><span>HOME</span></div>
-                        </div>
+                        </Link>
                     </div>
                     <div className="sidebar-item-wrapper">
-                        <div className="sidebar-item">
-                            <div className="sidebar-icon">
-                                <FiShoppingBag size={25} color="rgb(187, 187, 187)" />
+                        <Link to="/cart" style={{textDecoration:'none'}}>
+                            <div className="sidebar-item">
+                                <div className="sidebar-icon">
+                                    <FiShoppingBag size={25} color="rgb(187, 187, 187)" />
+                                </div>
+                                <div className="sidebar-text"><span>CART</span></div>
                             </div>
-                            <div className="sidebar-text"><span>CART</span></div>
-                        </div>
+                        </Link>
                     </div>
                     <div className="sidebar-item-wrapper">
                         <div className="sidebar-item">
@@ -42,12 +47,14 @@ const Sidebar = ({sidebaropened,closesidebar})=>
                         </div>
                     </div>
                     <div className="sidebar-item-wrapper">
-                        <div className="sidebar-item">
-                            <div className="sidebar-icon">
-                                <MdFavoriteBorder size={25} color="rgb(187, 187, 187)" />
+                        <Link to="/wishlist" style={{textDecoration:'none'}}>
+                            <div className="sidebar-item">
+                                <div className="sidebar-icon">
+                                    <MdFavoriteBorder size={25} color="rgb(187, 187, 187)" />
+                                </div>
+                                <div className="sidebar-text"><span>WISHLIST</span></div>
                             </div>
-                            <div className="sidebar-text"><span>WISHLIST</span></div>
-                        </div>
+                        </Link>
                     </div>
                     <div className="sidebar-item-wrapper">
                         <div className="sidebar-item">
